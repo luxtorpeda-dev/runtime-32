@@ -29,4 +29,20 @@ To list docker images you have available:
 
 ## Upload image
 
-TODO
+Example process of uploading your new image:
+
+    $ docker login
+
+    $ docker tag afd465dc92b8 luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
+
+    $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
+
+and then:
+
+    $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
+
+and remember to run:
+
+    $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
+
+repeat until docker stops failing…
