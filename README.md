@@ -46,3 +46,10 @@ and remember to run:
     $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
 
 repeat until docker stops failing…
+
+
+## Cleanup
+
+To remove old images:
+
+    $ docker image rm <name>

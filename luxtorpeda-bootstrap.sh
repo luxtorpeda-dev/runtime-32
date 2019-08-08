@@ -5,7 +5,16 @@ set -e
 
 # Packages to be added to the Docker image:
 
-apt-get install -y gcc-5 g++-5 g++-5-multilib git
+apt-get install -y \
+	automake \
+	g++-5 \
+	g++-5-multilib \
+	gcc-5 \
+	git \
+	python3 \
+	tree \
+	unzip \
+	yasm
 
 update-alternatives --install \
 	"$(command -v gcc)" gcc "$(command -v gcc-5)" 50
