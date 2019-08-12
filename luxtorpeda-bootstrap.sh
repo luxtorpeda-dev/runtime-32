@@ -11,10 +11,12 @@ apt-get install -y \
 	g++-5-multilib \
 	gcc-5 \
 	git \
+	libgnutls-dev \
 	python3 \
 	tree \
 	unzip \
-	yasm
+	yasm \
+	zip
 
 update-alternatives --install \
 	"$(command -v gcc)" gcc "$(command -v gcc-5)" 50
