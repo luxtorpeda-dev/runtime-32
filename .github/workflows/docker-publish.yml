@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Clone Steam Runtime
-        run: git clone git@github.com:ValveSoftware/steam-runtime.git
+        run: git clone https://github.com/ValveSoftware/steam-runtime.git
       - name: Build image
         run: ./steam-runtime/setup_docker.sh --beta amd64 --extra-bootstrap=luxtorpeda-bootstrap.sh runtime
       - name: Log into registry
