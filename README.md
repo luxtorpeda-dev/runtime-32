@@ -1,7 +1,7 @@
 Scripts for maintaining Steam Runtime docker image
 
 You don't need to build it yourself to use it; I upload images to
-https://hub.docker.com/u/luxtorpeda
+https://hub.docker.com/r/luxtorpedadev/runtime
 
 TODO: document how to download it locally
 
@@ -25,7 +25,7 @@ To list docker images you have available:
     $ ./path_to_steam_runtime/setup_docker.sh \
         --beta amd64 \
         --extra-bootstrap=luxtorpeda-bootstrap.sh \
-	steam-runtime-amd64-beta
+	runtime
 
 ## Upload image
 
@@ -33,19 +33,9 @@ Example process of uploading your new image:
 
     $ docker login
 
-    $ docker tag afd465dc92b8 luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
+    $ docker tag afd465dc92b8 luxtorpedadev/runtime:7
 
-    $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
-
-and then:
-
-    $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
-
-and remember to run:
-
-    $ docker push luxtorpeda/steam-runtime-amd64-beta:lux-190802-1
-
-repeat until docker stops failing…
+    $ docker push luxtorpedadev/runtime:7
 
 
 ## Cleanup
