@@ -24,10 +24,10 @@ jobs:
       - name: Build image
         run: ./steam-runtime/setup_docker.sh --beta amd64 --extra-bootstrap=luxtorpeda-bootstrap.sh runtime
       - name: Log into registry
-        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login -u ${{ github.actor }} --password-stdin
       - name: Push image
         run: |
-          IMAGE_ID=docker.pkg.github.com/luxtorpedadev/runtime/runtime
+          IMAGE_ID=luxtorpedadev/runtime
           
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
