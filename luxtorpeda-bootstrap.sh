@@ -8,7 +8,6 @@ set -e
 apt-get install -y \
 	automake \
 	g++-5 \
-	g++-5-multilib \
 	gcc-5 \
 	git \
 	libgnutls-dev \

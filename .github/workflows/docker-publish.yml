@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Generate build number
       id: buildnumber
-      uses: einaregilsson/build-number@v2 
+      uses: luxtorpeda-dev/build-number@28d7a55
       with:
         token: ${{ secrets.github_token }}
   push:
@@ -22,12 +22,12 @@ jobs:
       - name: Clone Steam Runtime
         run: git clone https://github.com/ValveSoftware/steam-runtime.git
       - name: Build image
-        run: ./steam-runtime/setup_docker.sh --beta amd64 --extra-bootstrap=luxtorpeda-bootstrap.sh runtime
+        run: ./steam-runtime/setup_docker.sh --beta i386 --extra-bootstrap=luxtorpeda-bootstrap.sh runtime
       - name: Log into registry
         run: echo "${{ secrets.DOCKERHUB_PASSWORD }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
       - name: Push image
         run: |
-          IMAGE_ID=luxtorpedadev/runtime
+          IMAGE_ID=luxtorpedadev/runtime-32
           
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
